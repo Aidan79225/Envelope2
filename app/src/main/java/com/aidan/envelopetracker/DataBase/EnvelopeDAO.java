@@ -39,7 +39,7 @@ public class EnvelopeDAO {
     }
 
     public static EnvelopeDAO getInstance() {
-        if (envelopeDAO == null) return null;
+        if (envelopeDAO == null) throw new NullPointerException("has not init");
         return envelopeDAO;
     }
 
@@ -114,15 +114,9 @@ public class EnvelopeDAO {
     public Envelope get(String id) {
         // 準備回傳結果用的物件
         Envelope item = null;
-        // 使用編號為查詢條件
         String where = ObjectIdColumn + "=" + id;
-        // 執行查詢
-        Cursor result = db.query(
-                TABLE_NAME, null, where, null, null, null, null, null);
-
-        // 如果有查詢結果
+        Cursor result = db.query(TABLE_NAME, null, where, null, null, null, null, null);
         if (result.moveToFirst()) {
-            // 讀取包裝一筆資料的物件
             item = getRecord(result);
         }
 

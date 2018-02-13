@@ -5,4 +5,7 @@ package com.aidan.envelopetracker.Model;
  */
 public class Constants {
     public static final String envelopeRefresh = "envelopeRefresh";
+    public static boolean isRelease(){
+        return false;
+    }
 }

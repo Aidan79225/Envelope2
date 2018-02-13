@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-
 import com.aidan.envelopetracker.Model.Bill;
 
 import java.util.ArrayList;
@@ -16,13 +15,10 @@ import java.util.List;
  */
 
 public class BillDAO {
-    // 表格名稱
-    public static final String TAG = "BillDAO";
     public static final String TABLE_NAME = "Bill";
 
-    // 其它表格欄位名稱
-    public static final String NameColumn = "name";
     public static final String ObjectIdColumn = "objectId";
+    public static final String NameColumn = "name";
     public static final String CommentColumn = "comment";
     public static final String CostColumn = "cost";
     public static final String DateColumn = "date";
@@ -43,7 +39,7 @@ public class BillDAO {
     }
 
     public static BillDAO getInstance() {
-        if (billDAO == null) return null;
+        if (billDAO == null) throw new NullPointerException("has not init");
         return billDAO;
     }
 
@@ -57,12 +53,6 @@ public class BillDAO {
 
     // 新增參數指定的物件
     public Bill insert(Bill item) {
-        return insert(item, TABLE_NAME);
-    }
-
-    // 新增參數指定的物件
-    public Bill insert(Bill item, String tableName) {
-        // 建立準備新增資料的ContentValues物件
         ContentValues cv = new ContentValues();
         cv.put(NameColumn, item.getEnvelopeName());
         cv.put(CommentColumn, item.getComment());
@@ -71,18 +61,13 @@ public class BillDAO {
         cv.put(DateColumn, item.getTime());
         cv.put(EnvelopIdColumn, item.getEnvelopId());
 
-        long id = db.insert(tableName, null, cv);
+        long id = db.insert(TABLE_NAME, null, cv);
         // 回傳結果
         return item;
     }
 
     // 修改參數指定的物件
     public boolean update(Bill item) {
-        return update(item, TABLE_NAME);
-    }
-
-    // 修改參數指定的物件
-    public boolean update(Bill item, String tableName) {
         // 建立準備修改資料的ContentValues物件
         ContentValues cv = new ContentValues();
 
@@ -94,7 +79,7 @@ public class BillDAO {
         cv.put(DateColumn, item.getTime());
         cv.put(EnvelopIdColumn, item.getEnvelopId());
         String where = ObjectIdColumn + "= \"" + item.getId() + "\"";
-        long test = db.update(tableName, cv, where, null);
+        long test = db.update(TABLE_NAME, cv, where, null);
 
         return test > 0;
     }
@@ -161,7 +146,6 @@ public class BillDAO {
         // 回傳結果
         return item;
     }
-
 
 
     // 把Cursor目前的資料包裝為物件
