@@ -34,16 +34,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(EnvelopeDAO.CREATE_TABLE);
         db.execSQL(BillDAO.CREATE_TABLE);
-        db.execSQL(MonthHistoryDAO.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + EnvelopeDAO.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + BillDAO.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + MonthHistoryDAO.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + MonthHistoryDAO.envelopeTableName);
-        db.execSQL("DROP TABLE IF EXISTS " + MonthHistoryDAO.accountTableName);
         onCreate(db);
     }
 }
