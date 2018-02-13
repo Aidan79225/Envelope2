@@ -8,7 +8,7 @@ import java.util.UUID;
  * Created by Aidan on 2016/10/2.
  */
 
-public class Account {
+public class Bill {
     private int cost = 0;
     private String comment = "";
     private String envelopeName = "";
@@ -16,7 +16,7 @@ public class Account {
     private Date date;
     private String envelopId = "";
     SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm");
-    public Account() {
+    public Bill() {
         id = UUID.randomUUID().toString().substring(0, 10);
         date = new Date();
     }

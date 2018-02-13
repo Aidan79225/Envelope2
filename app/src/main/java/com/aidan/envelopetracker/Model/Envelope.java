@@ -1,5 +1,7 @@
 package com.aidan.envelopetracker.Model;
 
+import com.aidan.envelopetracker.DataBase.LoadDataSingleton;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -13,7 +15,7 @@ public class Envelope {
     private String name = "";
     private int max = 0;
     private int cost = 0;
-    private List<Account> accountList = new ArrayList<Account>();
+    private List<Bill> billList = new ArrayList<Bill>();
 
     public Envelope() {
         id = UUID.randomUUID().toString().substring(0, 10);
@@ -41,8 +43,8 @@ public class Envelope {
 
     public void setName(String name) {
         this.name = name;
-        for (Account account : accountList) {
-            account.setEnvelopeName(name);
+        for (Bill bill : billList) {
+            bill.setEnvelopeName(name);
         }
     }
 
@@ -54,22 +56,22 @@ public class Envelope {
         this.max = max;
     }
 
-    public List<Account> getAccountList() {
-        return accountList;
+    public List<Bill> getBillList() {
+        return billList;
     }
 
-    public void setAccountList(List<Account> accountList) {
-        this.accountList = accountList;
+    public void setBillList(List<Bill> billList) {
+        this.billList = billList;
     }
 
-    public void addAccount(Account account) {
-        accountList.add(account);
-        cost += account.getCost();
+    public void addAccount(Bill bill) {
+        billList.add(bill);
+        cost += bill.getCost();
 
     }
 
-    public void addAccountFromDB(Account account) {
-        accountList.add(account);
+    public void addBillFromDB(Bill bill) {
+        billList.add(bill);
     }
 
     @Override
@@ -84,16 +86,16 @@ public class Envelope {
 
     public void refresh() {
         cost = 0;
-        for (Account account : accountList) {
-            cost += account.getCost();
+        for (Bill bill : billList) {
+            cost += bill.getCost();
         }
     }
 
     public void tobeNewEnvelope() {
         id = UUID.randomUUID().toString().substring(0, 10);
-        accountList = new ArrayList<>();
+        billList = new ArrayList<>();
         cost = 0;
-//        LoadDataSingleton.getInstance().saveEnvelope(this);
+        LoadDataSingleton.getInstance().saveEnvelope(this);
     }
 
 
