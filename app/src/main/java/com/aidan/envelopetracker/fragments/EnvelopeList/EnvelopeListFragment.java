@@ -1,5 +1,6 @@
-package com.aidan.envelopetracker.fragments;
+package com.aidan.envelopetracker.fragments.EnvelopeList;
 
+import com.aidan.envelopetracker.R;
 import com.aidan.envelopetracker.base.BaseFragment;
 
 /**
@@ -9,7 +10,7 @@ import com.aidan.envelopetracker.base.BaseFragment;
 public class EnvelopeListFragment extends BaseFragment{
     @Override
     protected int getLayoutResourceId() {
-        return 0;
+        return R.layout.fragment_envelope_list;
     }
 
     @Override
