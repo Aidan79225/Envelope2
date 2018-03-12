@@ -1,13 +1,8 @@
-package com.aidan.envelopetracker.DataBase;
+package com.aidan.envelopetracker.dataBase;
 
 
-import com.aidan.envelopetracker.Model.Bill;
-import com.aidan.envelopetracker.Model.Envelope;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import com.aidan.envelopetracker.models.Bill;
+import com.aidan.envelopetracker.models.Envelope;
 
 /**
  * Created by Aidan on 2016/10/3.

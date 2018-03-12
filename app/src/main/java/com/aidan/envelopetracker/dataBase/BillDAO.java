@@ -1,11 +1,11 @@
-package com.aidan.envelopetracker.DataBase;
+package com.aidan.envelopetracker.dataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.aidan.envelopetracker.Model.Bill;
+import com.aidan.envelopetracker.models.Bill;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.aidan.envelopetracker.DataBase;
+package com.aidan.envelopetracker.dataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.aidan.envelopetracker.Model.Envelope;
+import com.aidan.envelopetracker.models.Envelope;
 
 import java.util.ArrayList;
 import java.util.List;

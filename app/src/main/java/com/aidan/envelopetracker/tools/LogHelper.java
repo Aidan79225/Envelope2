@@ -1,8 +1,8 @@
-package com.aidan.envelopetracker.Tools;
+package com.aidan.envelopetracker.tools;
 
 import android.util.Log;
 
-import com.aidan.envelopetracker.Model.Constants;
+import com.aidan.envelopetracker.models.Constants;
 /**
  * Created by s352431 on 2018/2/13.
  */

@@ -1,6 +1,6 @@
-package com.aidan.envelopetracker.Model;
+package com.aidan.envelopetracker.models;
 
-import com.aidan.envelopetracker.DataBase.LoadDataSingleton;
+import com.aidan.envelopetracker.dataBase.LoadDataSingleton;
 
 import java.util.ArrayList;
 import java.util.List;

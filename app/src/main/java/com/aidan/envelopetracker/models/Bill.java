@@ -1,4 +1,4 @@
-package com.aidan.envelopetracker.Model;
+package com.aidan.envelopetracker.models;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

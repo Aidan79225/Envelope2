@@ -1,4 +1,4 @@
-package com.aidan.envelopetracker.DataBase;
+package com.aidan.envelopetracker.dataBase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DBHelper extends SQLiteOpenHelper {
-    private final static int DBVersion = 4; //<-- 版本
+    private final static int DBVersion = 1; //<-- 版本
     private final static String DBName = "SaveMoney.db";  //<-- db name
     private static SQLiteDatabase database;
 
@@ -38,8 +38,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + EnvelopeDAO.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS " + BillDAO.TABLE_NAME);
-        onCreate(db);
+
     }
 }

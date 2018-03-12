@@ -1,4 +1,4 @@
-package com.aidan.envelopetracker.Model;
+package com.aidan.envelopetracker.models;
 
 /**
  * Created by s352431 on 2016/10/7.
